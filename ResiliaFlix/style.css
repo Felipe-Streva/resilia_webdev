@@ -26,9 +26,10 @@ h1{
     font-weight: bold;
 }
 
-.container ul{
+.navi{
     display: flex;
 }
+
 
 header a{
     padding: 3px 10px;
@@ -38,10 +39,48 @@ header a{
     border-radius: 5px;
 }
 
-main{
-    background: white;
-    /*height: 4000px;*/
+header a:hover{
+    transform: scale(1.2);
 }
+
+header a:active{
+    transform: scale(1.4);
+}
+
+main{
+    background:#DDDDDD;
+}
+
+.container-filmes{
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 10% 0;
+}
+
+.filmes{
+    width: 21%;
+    padding: 2.5% 2.5%;
+    transition: 0.2s all;
+}
+
+.filmes:nth-child(4n+1){
+    padding-left: 0px;
+}
+
+.filmes:nth-child(4n){
+    padding-right: 0px;
+}
+
+.filmes:hover{
+    transform: scale(1.2);
+}
+
+.filmes:active{
+    transform: scale(1.4);
+}
+
 
 footer{
     width: 100%;
@@ -64,4 +103,63 @@ footer p{
     font-weight: bold;
     text-align: center;
     padding: 0 0 15px;
+}
+
+
+@media (max-width:780px){
+    .container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navi{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .container a{
+        text-align: center;
+        margin: 10px 0;
+        padding: 15px 40px;
+    }
+
+    .container-filmes{
+        align-items: center;
+    }
+
+    .filmes{
+        width: 28%;
+        padding: 2% 2%;
+    }
+
+    .filmes:nth-child(4n+1){
+        padding-left: 2%;
+    }
+    
+    .filmes:nth-child(4n){
+        padding-right: 2%;
+    }
+    
+}
+
+@media (max-width:600px){
+    .navi{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        align-items: initial;    
+    }
+
+    .container a{
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .container-filmes{
+        flex-direction: column;
+    }
+    
+    .filmes{
+        width: 80%;
+    }
 }
